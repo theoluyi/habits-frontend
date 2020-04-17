@@ -5,13 +5,13 @@ const linkStyle = {
   width: '100px',
   padding: '12px',
   margin: '0 6px 6px',
-  background: 'blue',
+  background: 'gray',
   textDecoration: 'none',
   color: 'white',
 }
 
 const darkBlue = {
-  background: "blue"
+  background: "green"
 }
 
 const NavBar = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card} from 'semantic-ui-react'
+// import {Card} from 'semantic-ui-react'
 
 
 class Day extends React.Component {
@@ -28,20 +28,37 @@ class Day extends React.Component {
     }
 
     colorToggle = () => {
-        return (
-               this.state.unmarked && "black" 
-            || this.state.complete && "green" 
-            || this.state.skipped && "white" 
-            || this.state.missed && "pink"
-        )
+        switch (true) {
+            case this.state.unmarked:
+                return "black"
+            case this.state.complete: 
+            return "green"
+            case this.state.skipped: 
+            return "gray"
+            case this.state.missed: 
+            return "red"
+            default:
+                return "black"
+
+        }
     }
+    // colorToggle = () => {
+    //     return (
+    //            this.state.unmarked && "black" 
+    //         || this.state.complete && "green" 
+    //         || this.state.skipped && "white" 
+    //         || this.state.missed && "pink"
+    //     )
+    // }
 
     render() {
+        console.log(this.props.habitDays)
         return (
             <div 
                 className="column"
                 style={{backgroundColor: this.colorToggle()}} 
                 onClick={this.handleClick}
+                date={this.props.date}
             > 
             ⠀
             </div>
